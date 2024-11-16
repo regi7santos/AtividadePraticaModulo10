@@ -83,12 +83,14 @@ const ListarTarefa = () => {
 
     return(
     <>
+
     <Card>
-        <CardHeader
-          title="Tarefas"
-          subheader="Listagem de Tarefas"
-        /> 
-        <CardContent>
+ <CardHeader
+  title="Tarefas"
+  subheader="Listagem de Tarefas"
+  sx={{ color: 'orange' }}
+/>
+       <CardContent>
             <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
@@ -122,10 +124,10 @@ const ListarTarefa = () => {
                       <TableCell align="right">{row.statusTarefa}</TableCell>
                       <TableCell align="right">{row.recursoTarefa}</TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
+                        <Button variant="contained" color="primary" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
                       </TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
+                        <Button variant="contained" color="warning" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
                       </TableCell>
                     </TableRow>
                 ))}
@@ -134,8 +136,8 @@ const ListarTarefa = () => {
             </TableContainer>
         </CardContent>
         <CardActions>
-            <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
-            <Button size="small" variant="outlined">Cancelar</Button>
+            <Button size="large" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
+            <Button size="large" variant="outlined">Cancelar</Button>
       </CardActions> 
     </Card>
     <div>
